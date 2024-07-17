@@ -1,0 +1,64 @@
+created_by: IBM Wazi Development
+domain: code explanation
+version: 2
+seed_examples:
+  - answer: |
+      The given assembler code tries to open the FILEOUT command and branches if the file was not opened successfully.
+    question: >
+      Question:
+      Assembler code:
+
+      SLR   R15,R15
+      OPEN (FILEOUT,OUTPUT)
+      LTR   R15,R15
+      BNZ   BADOPENI
+
+      As an Assembler expert, please provide a simple summary for the above Assembler program.
+  - answer: |
+      The given assembler code branches to OPENFILS, then MAINLOOP,
+      and finally CLOSFILS before ending the program with the ABEND macro.
+    question: >
+      Question:
+      Assembler code:
+
+      MAINLINE BAL   R11,OPENFILS
+      BAL   R11,MAINLOOP
+      BAL   R11,CLOSFILS
+      ABEND
+
+      As an Assembler expert, please provide a simple summary for the above Assembler program.
+  - answer: |
+      The given assembler code moves the value of OUTLINE2 to OUTREC.
+    question: >
+      Question:
+      Assembler code:
+
+      MVC   OUTREC,OUTLINE2
+
+      As an Assembler expert, please provide a simple summary for the above Assembler program.
+  - answer: |
+      The format of the RECCOUNT operand is changed from signed-packed-decimal to zoned, and the result is placed
+      at the OUTRECCT operand's location.
+    question: >
+      Question:
+      Assembler code:
+
+      UNPK  OUTRECCT,RECCOUNT
+
+      As an Assembler expert, please provide a simple summary for the above Assembler program.
+  - answer: |
+      The given assembler code frees R15 from a prior USING instruction and then load the value of R15 into R12.
+    question: >
+      Question:
+      Assembler code:
+
+      DROP  R15
+      LR    R12,R15
+
+      As an Assembler expert, please provide a simple summary for the above Assembler program.
+task_description: "Explain HLASM code"
+document:
+  repo: https://github.ibm.com/Gagan-Hegde/hlasm-explain/
+  commit: 7c2248f1fd75264e2029948d63c0aa086415d587
+  patterns:
+    - hlasm*.md
